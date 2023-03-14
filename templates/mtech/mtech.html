@@ -1,0 +1,130 @@
+
+
+
+    
+    <form method="POST" action="{{action}}">
+        {%csrf_token%}
+            
+        <script>
+            var BranchObject = {
+                "ECE": {
+                "1st Year": ["1st Sem","2nd Sem"],
+                "2nd Year": ["1st Sem","2nd Sem"],
+                    
+              },
+              "EEE": {
+                "1st Year": ["1st Sem","2nd Sem"],
+                "2nd Year": ["1st Sem","2nd Sem"],
+              },
+              "CIVIL":{"1st Year": ["1st Sem","2nd Sem"],
+                "2nd Year": ["1st Sem","2nd Sem"],
+              },
+              "CSE":{
+                  "1st Year": ["1st Sem","2nd Sem"],
+                "2nd Year": ["1st Sem","2nd Sem"],
+              },
+              "MECHANICAL":{
+                  "1st Year": ["1st Sem","2nd Sem"],
+                "2nd Year": ["1st Sem","2nd Sem"],
+              },
+              "INSTRUMENTATION":{
+                  "1st Year": ["1st Sem","2nd Sem"],
+                "2nd Year": ["1st Sem","2nd Sem"],
+              },
+              "AUTOMOBILE":{
+                  "1st Year": ["1st Sem","2nd Sem"],
+                "2nd Year": ["1st Sem","2nd Sem"],
+              },
+            }
+            window.onload = function() {
+              var BranchSel = document.getElementById("Branch");
+              var YearSel = document.getElementById("Year");
+              var SemSel = document.getElementById("Sem");
+              for (var x in BranchObject) {
+                BranchSel.options[BranchSel.options.length] = new Option(x, x);
+              }
+              BranchSel.onchange = function() {
+                //empty Sems- and Years- dropdowns
+                SemSel.length = 1;
+                YearSel.length = 1;
+                //display correct values
+                for (var y in BranchObject[this.value]) {
+                  YearSel.options[YearSel.options.length] = new Option(y, y);
+                }
+              }
+              YearSel.onchange = function() {
+                //empty Sems dropdown
+                SemSel.length = 1;
+                //display correct values
+                var z = BranchObject[BranchSel.value][this.value];
+                for (var i = 0; i < z.length; i++) {
+                  SemSel.options[SemSel.options.length] = new Option(z[i], z[i]);
+                }
+              }
+            }
+            </script>
+            Select Branch: <select name="Branch" id="Branch">
+                <option selected="selected">Select Branch</option>
+              </select>
+              
+            Select Year: <select name="Year" id="Year">
+                <option selected="selected">Please select Branch first</option>
+              </select>
+              
+            Select Sem: <select name="Sem" id="Sem">
+                <option selected="selected">Please select Year first</option>
+              </select>
+              
+              <input type="submit" value="Submit">  
+               
+    </form>
+
+
+  
+
+    {%for x in data%}
+      <form method="post" action="/MtechMaterialsUpload/" enctype="multipart/form-data">
+        {%csrf_token%}
+         Branch : <select name="branch"><option>{{x.Branch_Name}}</option></select> </select> Year : <select name="year"><option>{{x.Year}}</option></select></select> Sem : <select name="sem"><option>{{x.Sem}}</option></select>
+         Subject : <select name="subject"><option>{{x.Subject_Name}}</option></select>Chapter : <select name="chapter">
+        {%for z in x.Chapter.all%}
+          <option>{{z.Chapter_Name}}</option>
+        {%endfor%}
+        </select>
+        <input type="file" name="file">
+        <input type="submit" value="Upload"><br>
+      </form>
+    {%endfor%}
+  
+    {{success}}
+    {{upload_fail}}
+    {{method_fail}}
+    <button onclick="back()">Back</button>
+    <a href="/home/"><button>Home</button></a>
+    <script>
+      function back(){
+        window.history.back()
+      }
+    </script>
+<br>
+
+
+
+
+
+
+  {%for a in sending_data%}
+    
+    <h3>Subject Name : <subj style="color:red">{{a.Subject_Name}} :-</subj>  Chapter Name : <chap style="color:green">  {{a.Chapter_Name}}</chap> <a href="{{a.File.url}}" download>{{a.File}}</a></h3>
+    
+  {%endfor%}
+  
+
+<form>
+  {{form.as_p}}
+</form>
+
+
+    
+
+

@@ -1,0 +1,100 @@
+    <!DOCTYPE html>
+    {% load static %}
+
+    <html lang="en">
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Sofia');
+            @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rubik:wght@500&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@600&display=swap');
+            
+        </style>
+        <!--<meta http-equiv="refresh" content="5"> refresh the page every 5 seconds -->
+        <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Tangerine">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+      
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/css/home.css">
+        <link rel="stylesheet" href="{%static 'css/home.css'%}">
+        <title >Engineers World</title>
+    </head>
+    <body style="background-color:lightgray">
+        <div>
+            <h1 class="title">Engineers World</h1>
+        </div>
+        
+        <div class="btn-group" style="margin-top:2%;margin-left:4%;">
+            <button type="button" style="font-size: 30px;background-image:linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);border-radius:30px;font-weight:bolder;color:whitesmoke;box-shadow: 4px 0px 50px rgb(59, 126, 198);"class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              View Jobs
+            </button>
+            <ul class="dropdown-menu" style="font-size: 20px;text-shadow:0px 5px 15px rgb(59, 126, 198);border-radius:20px;box-shadow: 4px 0px 50px rgb(59, 126, 198);">
+              <li><a class="dropdown-item" href="#">Private Jobs</a></li>
+              <li><a class="dropdown-item" href="#">State Govt Jobs</a></li>
+              <li><a class="dropdown-item" href="#">Central Govt Jobs</a></li>
+            </ul>
+            <button type="button"style="font-size: 30px;background-image:linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);border-radius:30px;font-weight:bolder;color:whitesmoke;box-shadow: 4px 0px 50px rgb(59, 126, 198);" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Post A Job
+              </button>
+              <ul class="dropdown-menu" style="font-size: 20px;text-shadow:0px 5px 15px rgb(59, 126, 198);border-radius:20px;box-shadow: 4px 0px 50px rgb(59, 126, 198);">
+                <li><a class="dropdown-item" href="/Register_As_Company/">Register As Company</a></li>
+                <li><a class="dropdown-item" href="/Login/">Login</a></li>
+                <li><a class="dropdown-item" href="/forgot_password/">Reset Or Forgot Password</a></li>
+              </ul>
+              <button type="button"style="font-size: 30px;background-image:linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);border-radius:30px;font-weight:bolder;color:whitesmoke;box-shadow: 4px 0px 50px rgb(59, 126, 198);" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Login As Job Searcher
+              </button>
+              <ul class="dropdown-menu" style="font-size: 20px;text-shadow:0px 5px 15px rgb(59, 126, 198);border-radius:20px;box-shadow: 4px 0px 50px rgb(59, 126, 198);">
+                <li><a class="dropdown-item" href="#">Register      </a></li>
+                <li><a class="dropdown-item" href="#">Login         </a></li>
+              </ul>
+              <button type="button"style="font-size: 30px;background-image:linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);border-radius:30px;font-weight:bolder;color:whitesmoke;box-shadow: 4px 0px 50px rgb(59, 126, 198);" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Interview Preparation
+              </button>
+              <ul class="dropdown-menu" style="font-size: 20px;text-shadow:0px 5px 15px rgb(59, 126, 198);border-radius:20px;box-shadow: 4px 0px 50px rgb(59, 126, 198);">
+                <li><a class="dropdown-item" href="#">Software Engineer</a></li>
+                <li><a class="dropdown-item" href="#">Hardware Engineer</a></li>
+                <li><a class="dropdown-item" href="#">MS Office Based</a></li>
+                <li><a class="dropdown-item" href="#">Linux Based</a></li>
+                
+              </ul>
+              <button type="button"style="font-size: 30px;background-image:linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);border-radius:30px;font-weight:bolder;color:whitesmoke;box-shadow: 4px 0px 50px rgb(59, 126, 198);" class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Cets Preparation
+              </button>
+              <ul class="dropdown-menu" style="font-size: 20px;text-shadow:0px 5px 15px rgb(59, 126, 198);border-radius:20px;box-shadow: 4px 0px 50px rgb(59, 126, 198);">
+                <li><a class="dropdown-item" href="#">Eamcet</a></li>
+                <li><a class="dropdown-item" href="#">Ecet</a></li>
+                <li><a class="dropdown-item" href="#">Icet</a></li>
+                <li><a class="dropdown-item" href="#">Lawcet</a></li>
+                <li><a class="dropdown-item" href="#">PGcet</a></li>
+              </ul>  
+            
+          </div>
+          
+          
+        <marquee  class='upload' behavior="scroll" scrollamount="2" direction="right">Select Below Option For Upload Materials</marquee>
+        <div class='upload_education' style="margin-top: 10px;">
+            <p><a href="/mtech/" class="mtech">M.Tech</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="btech" href="/btech/">B.Tech</a>&nbsp;&nbsp&nbsp;&nbsp;&nbsp;<a href="/diploma/" class="diploma">Diploma</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/degree/" class="degree">Degree</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/inter/" class="inter">Intermediate</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p><a href="/iti/" class="iti">ITI</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/ssc/" class="ssc">Ap Ssc</a></p>
+        </div>
+        <marquee  class='upload' behavior="scroll" scrollamount="2" direction="right">Select Below Option For Download Materials</marquee>
+        <div class='upload_education' style="margin-top: 10px;">
+            <p><a href="/MtechMaterialsDownload/" class="mtech">M.Tech</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/DownloadBtechMaterials/" class="btech">B.Tech</a>&nbsp;&nbsp&nbsp;&nbsp;&nbsp;<a href="/DownloadDiplomaMaterials/" class="diploma">Diploma</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/DownloadDegreeMaterials/"class="degree">Degree</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/DownloadIntermediateMaterials/" class="inter">Intermediate</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p><a href="/DownloadItiMaterials/" class="iti">ITI</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/DownloadSscMaterials/" class="ssc">Ap Ssc</a></p>
+        </div>
+    
+      </body>
+  <script>
+    //alert("{{test}}")
+    //window.setTimeout( function() {
+      //window.location.reload();
+    //}, 10000);
+  </script>
+  </html>
+    

@@ -1,0 +1,22 @@
+
+    <form method="POST" action="/Login/">
+        {%csrf_token%}
+        {{login_form.as_p}}
+        <input type="submit" value="Login">
+    </form>
+
+{%for message in messages%}
+    {{message}} <br>
+    <script>
+        alert("{{message}}");
+    </script>
+{%endfor%}
+
+
+
+<a href="/forgot_password/"><button>Forgot or Reset Password </button></a> <a href="/home/"><button>Home</button></a> <button onclick="back()">Back</button>
+    <script type="text/javascript">
+        function back() {
+            window.history.back();
+        }
+    </script>

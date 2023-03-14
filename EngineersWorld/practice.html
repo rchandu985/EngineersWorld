@@ -1,0 +1,17 @@
+<input type ='text'  id="test">
+
+<select id="im">
+    <option>test</option>
+    <option >demo</option>
+</select>
+<button onclick="check()">get value</button>
+<script type="text/javascript">
+    function check(){
+    var data=document.getElementById("test").value
+        alert(data)
+}
+    var op=document.querySelector('#im')
+        op.onchange=function test(){
+            window.alert(op.value);
+        }
+</script>

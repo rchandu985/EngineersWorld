@@ -1,0 +1,26 @@
+<form method='POST'>
+    {% csrf_token %}
+        
+        {{company_registration_form.username.label}}
+        {{company_registration_form.username}} <br>
+        
+        {{company_registration_form.password.label}}
+        {{company_registration_form.password}}<br>
+        
+        {{company_registration_form.email.label}}
+        {{company_registration_form.email}}<br>
+    
+    <input type="submit" value="Register">
+</form>
+{%for message in messages%}
+    {{message}} <br>
+    <script>
+        alert("{{message}}")
+    </script>
+{%endfor%}
+<a href="/Login/"><button>Login</button> <a href="/home/"><button>Home</button></a> <button onclick="back()">Back</button>
+<script>
+    function back(){
+        window.history.back();
+    }
+</script>

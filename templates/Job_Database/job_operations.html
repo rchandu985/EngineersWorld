@@ -1,0 +1,73 @@
+{%if sync_data == '0' %}
+    {%if user.is_authenticated%}
+        <h1>Welcome {{request.user.username}}</h1>
+        <a href="/post_the_job/"><button>Post The Job</button></a>
+        <a href="/view_posted_jobs/"><button>View And Delete And Update Posted Jobs</button></a>
+        <a href="/Logout/"><button>Logout</button></a>
+    {%endif%}
+
+
+
+{% elif sync_data == '2' %}
+    {%if user.is_authenticated%}
+        <form method="POST">
+            {%csrf_token%}
+            {{job_creation_form.as_p}}
+            <button type="submit">Post</button>
+        </form>
+        <a href="/Logout/"><button>Logout</button></a>
+        <a href="/engineers_home/"><button>Home</button></a>
+    {%endif%}
+
+
+{%elif sync_data == '1' %}
+    {%if user.is_authenticated%}
+    <table border="2px" style="text-align: center;">
+        <tr>
+            <th>Job Id</th>
+            <th>Job Name</th>
+            <th>Company Name</th>
+            <th>Company Email</th>
+            <th>Required Experience</th>
+            <th>Required Skills</th>
+            <th>Update</th>
+            <th>Delete</th>
+            <th>View Shortlisted Candidates</th>
+        </tr>
+        {%for data in posted_jobs%}
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.designation}}</td>
+                <td>{{data.company_name}}</td>
+                <td>{{data.company_email}}</td>
+                <td>{{data.required_experience}}</td>
+                <td>{{data.required_skills}}</td>
+                <td><a href="/update_created_jobs/{{data.id}}"><button>Update</button></a></td>
+                <td><a href="/delete_created_job/{{data.id}}"><button>Delete</button></a></td>
+                <td><a href="/#/{{data.id}}/"><button>View Shortlisted Candidates</button></a></td>
+            </tr>
+            {%endfor%}
+        
+    </table>
+    <a href="/engineers_home/"><button>Home</button></a>
+    <a href="/Logout/"><button>Logout</button></a>
+    {%endif%}
+{%elif sync_data == '3' %}
+    <form method="POST">
+        {%csrf_token%}
+        {{update_form.as_p}}
+        <input type="submit" value="Update">
+    </form>
+    <button onclick="back()">Back</button>
+{%endif%}
+
+
+{%for message in messages%}
+    <script>alert('{{message}}')</script>
+{%endfor%}
+
+<script>
+    function back(){
+        window.history.back()
+    }
+</script>
